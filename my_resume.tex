@@ -6,7 +6,7 @@
 %------------------------
 
 \newcommand{\myName}{Jacek Zub}
-\newcommand{\myPhoneNumber}{}
+\newcommand{\myPhoneNumber}{+48 123-456-789}
 \newcommand{\myEmail}{JacekZub@proton.me}
 \newcommand{\myLinkedIn}{linkedin.com/in/jacek-zub}
 \newcommand{\myGithub}{github.com/Moztanku}
@@ -32,7 +32,7 @@
 %----------FONT OPTIONS----------
 % sans-serif
 % \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
+\usepackage[sfdefault]{roboto}
 % \usepackage[sfdefault]{noto-sans}
 % \usepackage[default]{sourcesanspro}
 
@@ -61,7 +61,7 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
+  \vspace{0pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
@@ -78,6 +78,12 @@
 \newcommand{\resumeItemm}[1]{
   \item\small{
     {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemListHeading}[1]{
+  \small{
+    {\vspace{10pt} \hspace{-16pt} \textbf{#1}: \vspace{-4pt}}
   }
 }
 
@@ -120,7 +126,7 @@
 \begin{center}
     \textbf{\Huge \scshape \myName} \\ \vspace{1pt}
     \small 
-        % {\myPhoneNumber} $|$
+        {\myPhoneNumber} $|$
         {\expandafter\href\expandafter{mailto:\myEmail}{\underline{\myEmail}}} $|$
         {\expandafter\href\expandafter{https://www.\myLinkedIn}{\underline{\myLinkedIn}}} $|$
         {\expandafter\href\expandafter{https://www.\myGithub}{\underline{\myGithub}}}
@@ -137,58 +143,63 @@
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Wrocław University of Science and Technology}{Wrocław, Poland}
+      {Wroclaw University of Science and Technology}{Wroclaw, Poland}
       {Engineer in Algorithmic Computer Science}{Oct. 2021 -- Ongoing}
+    \resumeItemListStart
+        \resumeItemListHeading{Relevant coursework}
+        \resumeItem{Algorithms and Data Structures}
+        \resumeItem{Metaheuristic Algorithms}
+        \resumeItem{Programming Languages and Paradigms}
+    \resumeItemListEnd
   \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
-
     \resumeSubheading
         {C++ Working Student}{February 2023 -- December 2023}
-        {Nokia Solutions and Networks}{Wrocław, Poland}
+        {Nokia Solutions and Networks}{Wroclaw, Poland}
     \resumeItem{
-        \begin{adjustwidth}{8pt}{4pt}
-        \hspace{8pt}
-        I was part of a team working on software for 5G Base Stations in L2-Hi layer, which means we worked mainly with PDCP, RLC and SDAP protocols. My work consisted of implementing new features, writing tests (using GTest and an internal specialized testing framework), analyzing and fixing errors, utilizing tools such as Git, Linux, Docker, Jenkins in CI/CD environment, working in the Scrum methodology with Jira. I've also used a lot of Bash and AWK scripting to automate repetitive tasks. 
-        \end{adjustwidth}
+        \resumeItemListStart
+            \resumeItem{Developing software for 5G Base Stations in modern C++}
+            \resumeItem{Writing tests in GTest and our internal testing framework}
+            \resumeItem{Working in CI/CD environment with tools such as Git, Linux, Docker, Jenkins}
+            \resumeItem{Automating repetetive tasks with Bash/AWK scripts and sharing them with others}
+        \resumeItemListEnd
     }
-
   \resumeSubHeadingListEnd
-
 
 %-----------PROJECTS-----------
 \section{Projects}
     \resumeSubHeadingListStart
         \resumeProjectHeading
-            {\textbf{LearnOpenGL} $|$ \emph
-                {C++, STL, OpenGL, CMake}
+            {\textbf{3DChess} $|$ \emph
+                {C++, OpenGL, CMake, STL}
             }
             {\small{\href
-                {https://github.com/Moztanku/LearnOpenGL}
-                {\underline{github.com/Moztanku/LearnOpenGL}}
+                {https://github.com/Moztanku/3DChess}
+                {\underline{github.com/Moztanku/3DChess}}
             }}
-            \resumeItem{
-                \begin{adjustwidth}{8pt}{0pt}
-                \hspace{4pt}
-                Demo of a 3D rendering engine written in C++ and OpenGL, created to learn the basics of graphics programming and OpenGL. It also includes full CMake build automation, Doxygen documentation generation, and static analysis using clang-tidy.
-                \end{adjustwidth}
-            }
+            \resumeItemListStart
+                \resumeItem{Developed a 3D game of chess using C++ and OpenGL}
+                \resumeItem{Configurable starting board via config files}
+                \resumeItem{CMake build automation}
+                \resumeItem{Usage of multiple external libraries (GLFW, GLM, STB, Assimp)}
+            \resumeItemListEnd
+
         \resumeProjectHeading
-            {\textbf{Courses} $|$ \emph
-                {C++, C, Python, SQL and many others...}
+            {\textbf{JacekLib} $|$ \emph
+                {C++, CMake, STL, Gtest}
             }
             {\small{\href
-                {https://github.com/Moztanku/Courses/}
-                {\underline{github.com/Moztanku/Courses/}}
+                {https://github.com/Moztanku/JacekLib}
+                {\underline{github.com/Moztanku/JacekLib}}
             }}
-            \resumeItem{
-                \begin{adjustwidth}{8pt}{0pt}
-                \hspace{4pt}
-                Repository containing most of the programs I've written during my studies. It includes code related to algorithms, data structures, databases, AI, scripting, and math. The languages used are C++, C, C\#, Python, Bash, SQL, Java, Haskell, Go, Ada, Rust, Prolog and more.
-                \end{adjustwidth}
-            }
+            \resumeItemListStart
+                \resumeItem{Utility library made for my own use}
+                \resumeItem{Includes logging with additional information (log level, source location), RNG etc.}
+                \resumeItem{Sample GTest unit tests}
+            \resumeItemListEnd
         \resumeProjectHeading
             {\textbf{Checkers} $|$ \emph
                 {Java, Typescript, Maven}
@@ -197,12 +208,11 @@
                 {https://github.com/Moztanku/Checkers}
                 {\underline{github.com/Moztanku/Checkers}}
             }}
-            \resumeItem{
-                \begin{adjustwidth}{8pt}{0pt}
-                \hspace{4pt}
-                My two-player checkers client-server application features a server written in Java and a web client made in TypeScript. The program includes a WebSocket handshake and communication, both implemented by me. It supports multiple variants and is designed with design patterns and the Model-View-Controller architecture in mind.
-                \end{adjustwidth}
-            }
+            \resumeItemListStart
+                \resumeItem{Client-server checkers application with multiple playable variants}
+                \resumeItem{Server written in Java and web client made in TypeScript}
+                \resumeItem{Communication via WebSocket with decoder/encoder written by me in Java}
+            \resumeItemListEnd
             
     \resumeSubHeadingListEnd
 %           -LANGUAGES-
@@ -223,9 +233,9 @@
       C++,
       C,
       Python,
+      Java,
       SQL,
-      Typescript,
-      HTML/CSS
+      Typescript
       } \\
      \textbf{Libraries}{:
         STL,
@@ -244,27 +254,6 @@
     }
     }}
  \end{itemize}
-
-%           -INTERESTS-
-
-\section{Hobbies}
-    \resumeSubHeadingListStart
-        \item{
-            \small{\textbf{Hiking}} \\
-            \begin{adjustwidth}{8pt}{0pt}
-            \vspace{-10pt} \hspace{4pt}
-            I love spending time in nature, particularly in the mountains, as it is mentally refreshing and healthy. For example, while working at Nokia, I joined a company-organized volunteering where we climbed a mountain and cleaned the forest along the way.
-            \end{adjustwidth}
-        }
-        \vspace{-8pt}
-        \item{
-            \small{\textbf{Movies}} \\
-            \begin{adjustwidth}{8pt}{0pt}
-            \vspace{-10pt} \hspace{4pt}
-            I'm an avid movie enthusiast who enjoys analyzing films. I have a particular interest in older movies and exploring the history of cinema. Some of my favorite directors include Martin Scorsese, David Lynch, and Francois Truffaut.
-            \end{adjustwidth}
-        }
-    \resumeSubHeadingListEnd
 %-------------------------------------------
 
 %           -FOOTER-
